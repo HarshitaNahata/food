@@ -1,0 +1,68 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Chole Bhature",
+            "desc": "Satisfying punjabi street food",
+            "price": 80,
+            "color": "#33505A",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHRLdh98eoe_im8IR0eR6whtnWS7ptFU7r3KFvHSbT6jmACe6kuBhUgMYQv1sRTIrYDIY&usqp=CAU"
+        },
+        {
+            "id": 2,
+            "name": "Pizza",
+            "desc": "Cheesy Italian Dish",
+            "price": 450,
+            "color": "#00AC51",
+            "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQU2s_1oArpclKYiCpBstG4blg2m0VAZuauUv2rUsp3yJuATpk3PwbEGV90i3Ey"
+        },
+        {
+            "id": 3,
+            "name": "Ice Cream",
+            "desc": "Cold and Creamy dessert",
+            "price": 220,
+            "color": "#E0BFAE",
+            "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRqB5LbJczKDwK3rTZRlSze52JtPbQz46gQtTnH0AHA10rmvMIGDn9tdvCXd0NN"
+        },
+        {
+            "id": 4,
+            "name": "Biryani",
+            "desc": "Spiced flavorful rice",
+            "price": 1080,
+            "color": "#544EE4",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUncLBUbelvldKKOKV-WlkYJQ6I6y9G2NCRA&usqp=CAU"
+        },
+        {
+            "id": 5,
+            "name": "Momos",
+            "desc": "Steamed filled dumplings",
+            "price": 50,
+            "color": "#E3E439",
+            "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSNxYZTT0dlQYAhYsUM2TGeho6V5JqL3cZvsmqFP--dlSB0ViWrr1uVb5MOs1Yy"
+        },
+        {
+            "id": 6,
+            "name": "Samosa",
+            "desc": "Crispy and savoury snack",
+            "price": 15,
+            "color": "#F73984",
+            "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSo1VzaBwQqgDM2iCDoJRdo5d09a13YEhPasgIT_wLgGG4EOprV8Q3wt4MQorJN"
+        },
+        {
+            "id": 7,
+            "name": "Khamman",
+            "desc": "Soft and fluffy gujrati dish",
+            "price": 120,
+            "color": "#1C1C1C",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh7j7BL86Jel82B65XJLzVndXVh0YYVdzZG9gFvNddoebpRLnY4pwMr_I83iP1"
+        },
+        {
+            "id": 8,
+            "name": "Burger",
+            "desc": "Grilled and fried patties",
+            "price": 250,
+            "color": "#7C895EB",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWva3Hnj5ql3wd6120x48at0p8RIauO82JHFX90ilj84AMsz32WeYF&usqp=CAE&s"
+        }
+    ]
+}
