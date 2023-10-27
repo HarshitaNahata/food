@@ -3,9 +3,9 @@ import 'dart:convert';
 
 class desiDelightModel {
   //Singleton class
-  static final catModel = desiDelightModel._internal();
-  desiDelightModel._internal();
-  factory desiDelightModel() => catModel;
+  // static final catModel = desiDelightModel._internal();
+  // desiDelightModel._internal();
+  // factory desiDelightModel() => catModel;
 
   
   static List<Item> items = [

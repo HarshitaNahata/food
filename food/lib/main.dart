@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:food/core/store.dart';
 import 'package:food/pages/cart_page.dart';
 import 'package:food/pages/home_page.dart';
 import 'package:food/pages/login_page.dart'; //we import the material package which provides widgets
 import 'package:food/utils/routes.dart';
 import 'package:food/widgets/themes.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 void main() {
   //main function
   runApp(
-      MyApp()); //method is runApp and we provide the app name over here and runApp takes a widgets and runs it
+      VxState(store: MyStore(),
+      child: MyApp())); //method is runApp and we provide the app name over here and runApp takes a widgets and runs it
 }
 
 class MyApp extends StatelessWidget {

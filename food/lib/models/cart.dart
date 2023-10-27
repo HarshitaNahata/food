@@ -2,9 +2,9 @@ import 'package:food/models/desidelight.dart';
 
 class CartModel {
   //Singleton class
-  static final cartModel = CartModel._internal();
-  CartModel._internal();
-  factory CartModel() => cartModel;
+  // static final cartModel = CartModel._internal();
+  // CartModel._internal();
+  // factory CartModel() => cartModel;
 
   //desidelight field
   desiDelightModel _desidelight = new desiDelightModel();

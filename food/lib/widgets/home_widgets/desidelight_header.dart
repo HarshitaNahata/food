@@ -9,7 +9,12 @@ class desiDelightHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        "DesiDelights".text.xl5.bold.color(context.theme.colorScheme.secondary).make(),
+        "DesiDelights"
+            .text
+            .xl5
+            .bold
+            .color(context.theme.colorScheme.secondary)
+            .make(),
         "Yummy Delights".text.xl.make(),
       ],
     );
