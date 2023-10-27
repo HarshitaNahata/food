@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/models/desidelight.dart';
+import 'package:food/widgets/home_widgets/add_to_cart.dart';
 import 'package:food/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -24,15 +25,8 @@ class HomeDetailPage extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             "₹${desidelight.price}".text.bold.xl4.green500.make(),
-            ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(context.theme.highlightColor),
-                  shape: MaterialStateProperty.all(
-                    StadiumBorder(),
-                  )),
-              child: "Add to cart".text.make(),
+            AddToCart(
+              desidelight: desidelight,
             ).wh(120, 50)
           ],
         ).p32(),

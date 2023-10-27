@@ -1,10 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:food/models/cart.dart';
+//import 'package:food/models/cart.dart';
 import 'package:food/models/desidelight.dart';
 import 'package:food/pages/home_detail_page.dart';
-import 'package:food/pages/home_page.dart';
+//import 'package:food/pages/home_page.dart';
+import 'package:food/widgets/home_widgets/add_to_cart.dart';
 import 'package:food/widgets/home_widgets/desidelight_image.dart';
-import 'package:food/widgets/themes.dart';
+//import 'package:food/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:flutter/material.dart';
@@ -65,7 +66,7 @@ class desiDelightItem extends StatelessWidget {
                 buttonPadding: EdgeInsets.zero,
                 children: [
                   "₹${desidelight.price}".text.bold.xl.make(),
-                  _AddToCart(desidelight: desidelight)
+                  AddToCart(desidelight: desidelight)
                 ],
               ).pOnly(right: 8.0)
             ],
@@ -76,38 +77,3 @@ class desiDelightItem extends StatelessWidget {
   }
 }
 
-class _AddToCart extends StatefulWidget {
-  final Item desidelight;
-  const _AddToCart({
-    Key? key,
-    required this.desidelight,
-  }) : super(key: key);
-
-  @override
-  State<_AddToCart> createState() => _AddToCartState();
-}
-
-class _AddToCartState extends State<_AddToCart> {
-  bool isAdded = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        isAdded = isAdded.toggle();
-        final _desidelight = desiDelightModel();
-        final _cart = CartModel();
-        _cart.desidelight = _desidelight;
-        _cart.add(widget.desidelight);
-        setState(() {});
-      },
-      style: ButtonStyle(
-          backgroundColor:
-              MaterialStateProperty.all(context.theme.highlightColor),
-          shape: MaterialStateProperty.all(
-            StadiumBorder(),
-          )),
-      child: isAdded ? Icon(Icons.done) : "Add to cart".text.make(),
-    );
-  }
-}
