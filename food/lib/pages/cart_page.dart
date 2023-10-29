@@ -27,18 +27,31 @@ class CartPage extends StatelessWidget {
 class _CartTotal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-   final CartModel _cart = (VxState.store as MyStore).cart;
+    final CartModel _cart = (VxState.store as MyStore).cart;
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           //can add \
-          "₹${_cart.totalPrice}"
-              .text
-              .xl5
-              .color(context.theme.colorScheme.secondary)
-              .make(),
+          VxConsumer(
+            notifications: {},
+            mutations: {RemoveMutation},
+            builder: (context, store, status) {
+              return "₹${_cart.totalPrice}"
+                  .text
+                  .xl5
+                  .color(context.theme.colorScheme.secondary)
+                  .make();
+            },
+            //   builder: (context,_){
+            //   return "₹${_cart.totalPrice}"
+            //     .text
+            //     .xl5
+            //     .color(context.theme.colorScheme.secondary)
+            //     .make(),
+            // },
+          ),
           30.widthBox,
           ElevatedButton(
                   onPressed: () {
@@ -61,6 +74,7 @@ class _CartList extends StatelessWidget {
   // final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
+    VxState.watch(context, on: [RemoveMutation]);
     final CartModel _cart = (VxState.store as MyStore).cart;
     return _cart.items.isEmpty
         ? "Cart is empty".text.xl3.makeCentered()
@@ -70,13 +84,13 @@ class _CartList extends StatelessWidget {
               leading: Icon(Icons.done),
               trailing: IconButton(
                 icon: Icon(Icons.remove_circle_outline),
-                onPressed: () {
-                  _cart
-                      .remove(_cart.items[index]); //to remove the selected item
-                  // setState(() {
-                  //   //rebuilds the widget to reflect changes in cart model
-                  // });
-                },
+                onPressed: () => RemoveMutation(_cart.items[index])
+                // _cart
+                // .remove(_cart.items[index]); //to remove the selected item
+                // setState(() {
+                //   //rebuilds the widget to reflect changes in cart model
+                // });
+                ,
               ),
               title: Text(_cart.items[index].name).text.make(),
             ),

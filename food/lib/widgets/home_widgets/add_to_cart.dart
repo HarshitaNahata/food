@@ -17,7 +17,7 @@ class AddToCart extends StatelessWidget {
   Widget build(BuildContext context) {
     //just like set state
     VxState.watch(context, on: [
-      AddMutation
+      AddMutation,RemoveMutation
     ]); //it only rebuilds the parts of the widget tree that need to be rebuilt.
     final CartModel _cart = (VxState.store as MyStore).cart;
     //final desiDelightModel _desidelight =
