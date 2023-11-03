@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:food/core/store.dart';
+import 'package:food/models/cart.dart';
 import 'dart:convert'; //helps to encode and decode
 import 'package:food/models/desidelight.dart';
 import 'package:food/utils/routes.dart';
@@ -43,17 +45,29 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = (VxState.store as MyStore).cart;
     // final dummyList = List.generate(20, (index) => desiDelightModel.items[0]);
     //widget always has return types and has paremeters in it like int cost, bool packet and if needed you can give @requiredwhich means you have to specify whether its true or false while calling a method
     //build is already a built function which is being over-ridden and widget gets built like a tree
     //var desiDelightModel;
     // desiDelightModel desiDelight = desiDelightModel();
     return Scaffold(
-        backgroundColor: context.canvasColor,//Theme.of(context).cardColor
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-          backgroundColor: context.theme.highlightColor,
-          child: Icon(CupertinoIcons.cart,color: Colors.white,),
+        backgroundColor: context.canvasColor, //Theme.of(context).cardColor
+        floatingActionButton: VxBuilder(
+          builder: (context, store, status_) => FloatingActionButton(
+            onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+            backgroundColor: context.theme.highlightColor,
+            child: Icon(
+              CupertinoIcons.cart,
+              color: Colors.white,
+            ),
+          ).badge(
+              color: Vx.yellow500,
+              size: 22,
+              count: _cart.items.length,
+              textStyle:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+          mutations: {AddMutation, RemoveMutation},
         ),
         //scaffold has many components,context tells us the location
         // appBar: AppBar(
